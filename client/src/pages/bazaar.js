@@ -9,7 +9,8 @@ export const Bazaar = () => {
         .then(res => {
             let list = [];
             for (const [key, value] of Object.entries(res.data)) {
-                list.push(value.product_id)
+                if (!key.includes("ENCHANTMENT"))
+                    list.push(value.product_id)
             }
             setItems(list);
         })
@@ -21,11 +22,11 @@ export const Bazaar = () => {
     return (<div className = "container">
         {items.map((item) => (
             <div className = "box">
-                { item.includes("ENCHANTMENT") ? <img/> :
                 <img
                     src={"https://sky.lea.moe/item/" + item}
                     className = "item"
-                    alt = "item picture"/> }
+                    alt = "item picture"
+                />
                 <h3> { item } </h3>
             </div>
         ))}

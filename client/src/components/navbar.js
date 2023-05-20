@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useCookies } from "react-cookie";
 
 export const Navbar = () => {
@@ -14,7 +13,11 @@ export const Navbar = () => {
                 <a href="/bazaar">Bazaar</a>
             </li>
             <li>
-                <a href="/auth">Login</a>
+                {
+                    !cookies.access_token ?
+                    <a href="/login">Login</a> :
+                    <a href="/logout">{ localStorage.username }</a>
+                }
             </li>
         </ul>
     </nav>);

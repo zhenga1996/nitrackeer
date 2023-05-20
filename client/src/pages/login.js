@@ -3,7 +3,7 @@ import axios from "axios";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 
-export default function Login() {
+export const Login = () => {
     const [_, setCookies] = useCookies(["access_token"]);
 
     const [username, setUsername] = useState("");
@@ -33,28 +33,33 @@ export default function Login() {
     };
   
     return (
-        <div className = "auth-container">
+        <div className = "center">
+            <h1>Login</h1>
             <form onSubmit = { handleSubmit }>
-                <h2>Login</h2>
-                <div className = "form-group">
-                    <label htmlFor = "username">Username:</label>
+                <div className = "txt_field">
                     <input
-                        type = "text"
+                        type = "text" required
                         id = "username"
                         value = { username }
                         onChange = { (event) => setUsername(event.target.value) }
                     />
+                    <span></span>
+                    <label>Username</label>
                 </div>
-                <div className = "form-group">
-                    <label htmlFor = "password">Password:</label>
+                <div className = "txt_field">
                     <input
-                        type = "password"
+                        type = "password" required
                         id = "password"
                         value = { password }
                         onChange = { (event) => setPassword(event.target.value) }
                     />
+                    <span></span>
+                    <label>Password</label>
                 </div>
                 <button type="submit">Login</button>
+                <div className="signup">
+                    Don't have an account yet? <a href="register">Sign-up!</a>
+                </div>
             </form>
         </div>
     );

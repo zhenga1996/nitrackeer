@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-export default function Register() {
+export const Register = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
@@ -19,28 +19,33 @@ export default function Register() {
     };
 
     return (
-        <div className = "auth-container">
-            <form onSubmit = {handleSubmit}>
-                <h2>Register</h2>
-                <div className = "form-group">
-                    <label htmlFor = "username">Username:</label>
+        <div className = "center">
+            <form onSubmit = { handleSubmit }>
+                <h1>Register</h1>
+                <div className = "txt_field">
                     <input
-                        type = "text"
+                        type = "text" required
                         id = "username"
                         value = { username }
                         onChange = { (event) => setUsername(event.target.value) }
                     />
+                    <span></span>
+                    <label>Username</label>
                 </div>
-                <div className = "form-group">
-                    <label htmlFor = "password">Password:</label>
+                <div className = "txt_field">
                     <input
-                        type = "password"
+                        type = "password" required
                         id = "password"
                         value = {password}
                         onChange = { (event) => setPassword(event.target.value) }
                     />
+                    <span></span>
+                    <label>Password</label>
                 </div>
                 <button type = "submit">Register</button>
+                <div className="signup">
+                    Already have an account? <a href="login">Sign-in!</a>
+                </div>
             </form>
         </div>
     );
