@@ -185,6 +185,7 @@ button[type="submit"]:hover {
 
 .view_item img {
     width: 75px;
+    height: 75px;
 }
 
 .view_main {
@@ -229,16 +230,16 @@ button[type="submit"]:hover {
     background: #222;
 }
 
-.grid_view {
+.grid-view {
     width: 100%;
 }
-.grid_view .view_item{
-    width: 100%;
+.grid-view .view_item{
+	display: inline-block;
     border: 1px solid white;
+    width: 230px;
     padding: 25px;
     text-align: center;
     margin: 10px;
-    display: inline-block;
 }
 .grid-view .view_item .vi_left{
 	margin-bottom: 10px;

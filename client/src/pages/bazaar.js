@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { toProperCase, nFormatter } from "../functions";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faList, faGrip } from '@fortawesome/free-solid-svg-icons'
 
 export const Bazaar = () => {
     const [items, setItems] = useState([]);
@@ -15,12 +13,13 @@ export const Bazaar = () => {
             let list = [];
             for (const [key, value] of Object.entries(res.data)) {
                 const stats = value.quick_status;
+                const id = value.name ? value.name : toProperCase(stats.productId);
                 if (!key.includes("ENCHANTMENT")) {
                     list.push([
-                        toProperCase(stats.productId),
+                        id,
                         stats.productId,
                         nFormatter(stats.sellPrice, 1),
-                        nFormatter(stats.sellsMovingWeek, 1),
+                        nFormatter(stats.sellMovingWeek, 1),
                         nFormatter(stats.buyPrice, 1),
                         nFormatter(stats.buyMovingWeek, 1),
                     ])
@@ -66,10 +65,8 @@ export const Bazaar = () => {
     <div className="wrapper">
         <div className="links">
             <ul>
-                <li className="li-list" data-view="list-view">
-                    <FontAwesomeIcon icon={faList} /> List View</li>
-                <li className="li-grid">
-                    <FontAwesomeIcon icon={faGrip} /> Grid View</li>
+                <li className="li-list" data-view="list-view">List View</li>
+                <li className="li-grid">Grid View</li>
             </ul>
         </div>
 
@@ -82,12 +79,10 @@ export const Bazaar = () => {
                         </div>
                         <div className="vi_right">  
                             <p className="title">{ item[0] }</p>
-                            <p className="content">
-                                Insta Buy: { item[2] }
-                                Insta Sell: { item[3] }
-                                Sell Volume: { item[4] }
-                                Buy Volume: { item[5] }
-                            </p>
+                            <p className="content">Insta Sell Price: { item[2] } coins</p>
+                            <p className="content">Weekly Insta Sell: { item[3] }</p>
+                            <p className="content">Insta Buy Price: { item[4] } coins</p>
+                            <p className="content">Weekly Insta Buy: { item[5] }</p>
                             <div className="btn">View More</div>
                         </div>
                     </div>
@@ -101,12 +96,10 @@ export const Bazaar = () => {
                         </div>
                         <div className="vi_right">
                             <p className="title">{ item[0] }</p>
-                            <p className="content">
-                                Insta Buy: { item[2] }
-                                Insta Sell: { item[3] }
-                                Sell Volume: { item[4] }
-                                Buy Volume: { item[5] }
-                            </p>
+                            <p className="content">Insta Sell Price: { item[2] } coins</p>
+                            <p className="content">Weekly Insta Sell: { item[3] }</p>
+                            <p className="content">Insta Buy Price: { item[4] } coins</p>
+                            <p className="content">Weekly Insta Buy: { item[5] }</p>
                             <div className="btn">View More</div>
                         </div>
                     </div>
