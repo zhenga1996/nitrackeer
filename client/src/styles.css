@@ -166,6 +166,7 @@ button[type="submit"]:hover {
     border-radius: 3px;
 }
 .links ul {
+    margin: auto;
     display: flex;
     justify-content: center;
 }

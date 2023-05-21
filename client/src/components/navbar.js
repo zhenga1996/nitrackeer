@@ -4,7 +4,7 @@ export const Navbar = () => {
     const [cookies] = useCookies(["access_token"]);
 
     return (<nav className = "nav">
-        <a href="/" className="site-title">Nitee Tracker</a>
+        <a href="/" className="site-title">Nitrackeer</a>
         <ul>
             <li>
                 <a href="/auction">Auction</a>
