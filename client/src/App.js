@@ -1,4 +1,5 @@
 import './styles.css';
+import 'font-awesome/css/font-awesome.min.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import { Home } from "./pages/home";
@@ -12,16 +13,14 @@ import { Navbar } from "./components/navbar";
 function App() {
   return (<Router>
       <Navbar />
-        <div className="container">
-          <Routes>
-            <Route path = "/" element = {<Home />} />
-            <Route path = "/auction" element = {<Auction />} />
-            <Route path = "/bazaar" element = {<Bazaar />} />
-            <Route path = "/login" element = {<Login />} />
-            <Route path = "/register" element = {<Register />} />
-            <Route path = "/logout" element = {<Logout />} />
-          </Routes>
-        </div>
+      <Routes>
+        <Route path = "/" element = {<Home />} />
+        <Route path = "/auction" element = {<Auction />} />
+        <Route path = "/bazaar" element = {<Bazaar />} />
+        <Route path = "/login" element = {<Login />} />
+        <Route path = "/register" element = {<Register />} />
+        <Route path = "/logout" element = {<Logout />} />
+      </Routes>
     </Router>);
 }
 
