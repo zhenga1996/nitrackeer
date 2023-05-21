@@ -80,7 +80,7 @@ export const Bazaar = () => {
                         <div className="vi_left">
                             <img src={ "https://sky.lea.moe/item/" + item[1] } alt="product"/>
                         </div>
-                        <div className="vi_right">
+                        <div className="vi_right">  
                             <p className="title">{ item[0] }</p>
                             <p className="content">
                                 Insta Buy: { item[2] }
