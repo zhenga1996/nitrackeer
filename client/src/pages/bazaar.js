@@ -3,6 +3,7 @@ import axios from "axios";
 import { toProperCase, nFormatter } from "../functions";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faList, faGrip } from '@fortawesome/free-solid-svg-icons'
+import { Loading } from "./loading";
 
 export const Bazaar = () => {
     const [items, setItems] = useState([]);
@@ -61,7 +62,7 @@ export const Bazaar = () => {
         })
     })
 
-    if (!items.length) return null;
+    if (!items.length) return <Loading />;
 
     return (
     <div className="wrapper">

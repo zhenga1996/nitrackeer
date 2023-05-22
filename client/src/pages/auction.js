@@ -1,3 +1,5 @@
 export const Auction = () => {
-    return <div>Auction</div>
+    return <div>
+        WIP
+    </div>
 };

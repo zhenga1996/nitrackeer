@@ -12,7 +12,14 @@ export const Logout = () => {
         navigate("/auth");
     }
 
-    return (<div className = "logout">
-        <button onClick = { logout }>Logout</button>
-    </div>);
+    return (
+        <div className = "center">
+            <h1>Logout</h1>
+            <form onSubmit = { logout }>
+                <div className = "txt">
+                    <strong>Oh no! You're leaving... Are you sure?</strong>
+                </div>
+                <button type="submit">Logout</button>
+            </form>
+        </div>);
 };
