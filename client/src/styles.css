@@ -35,6 +35,13 @@ body {
     box-sizing: border-box;
 }
 
+form .search {
+    margin-bottom: 10px;
+    margin-left: 2px;
+    padding-left: 5px;
+    padding-right: 5px
+}
+
 form .txt {
     position: relative;
     margin: 30px 0;
@@ -97,18 +104,13 @@ form .txt_field {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: opacity 0.75s, visibility 0.75s;
-}
-.loader--hidden {
-    opacity: 0;
-    visibility: hidden;
 }
 .loader::after {
     content: "";
-    width: 75px;
-    height: 75px;
+    width: 100px;
+    height: 100px;
     border: 15px solid #dddddd;
-    border-top-color: #009578;
+    border-top-color: #666;
     border-radius: 50%;
     animation: loading 0.75s ease infinite;
 }
@@ -228,6 +230,9 @@ button[type="submit"]:hover {
 .view_item img {
     width: 75px;
     height: 75px;
+}
+.list-view .view_item img {
+    margin-right: 20px;
 }
 
 .view_main {
