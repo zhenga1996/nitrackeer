@@ -7,7 +7,7 @@ import { Loading } from "./loading";
 
 export const Bazaar = () => {
     const [items, setItems] = useState([]);
-    const [filtered, setFiltered] = useState("");
+    const [filtered, setFiltered] = useState([]);
     const [search, setSearch] = useState("");
     const [view, setView] = useState("list-view");
 
@@ -15,7 +15,7 @@ export const Bazaar = () => {
     useEffect(() => {
         axios.get('https://api.slothpixel.me/api/skyblock/bazaar')
         .then(res => {
-            // Fomatting as array since I keep getting an error when using whole dictionary
+            // Fomatting as array since I keep getting an error when using a dictionary object
             // Array indexes: [name, product_id, sellPrice, sellMovingWeek, buyPrice, buyMovingWeek]
             let list = [];
             for (const [key, value] of Object.entries(res.data)) {
@@ -48,7 +48,7 @@ export const Bazaar = () => {
     };
     
     const imageOnError = (event) => {
-        event.currentTarget.src = "https://sky.lea.moe/item/BOOK";
+        event.currentTarget.src = "https://static.wikia.nocookie.net/minecraft/images/f/ff/BarrierOld.png";
         event.currentTarget.className = "error";
         event.currentTarget.onError = null;
     };
