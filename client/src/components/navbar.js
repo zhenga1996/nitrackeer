@@ -22,6 +22,3 @@ export const Navbar = () => {
         </ul>
     </nav>);
 }
-
-/* 
-        { !cookies.access_token ? <Link to = "/auth"> Register / Login </Link> : <Link to = "/logout"> { localStorage.username }</Link> } */

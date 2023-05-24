@@ -9,7 +9,7 @@ export const Logout = () => {
         setCookies("access_token", "");
         window.localStorage.removeItem("userID");
         window.localStorage.removeItem("username");
-        navigate("/auth");
+        navigate("/login");
     }
 
     return (

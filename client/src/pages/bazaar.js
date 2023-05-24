@@ -4,6 +4,7 @@ import { toProperCase, nFormatter } from "../functions";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faList, faGrip, faSearch } from '@fortawesome/free-solid-svg-icons'
 import { Loading } from "./loading";
+import { Product } from "./product";
 
 export const Bazaar = () => {
     const [items, setItems] = useState([]);
@@ -68,7 +69,7 @@ export const Bazaar = () => {
 
         <form onSubmit={ searchSubmit }>
             <label><FontAwesomeIcon icon={ faSearch }/>&ensp;</label>
-            <input type="text" value={search} onChange={ searchChange }/>
+            <input type="text" value={ search } onChange={ searchChange }/>
             <input className="search" type="submit" value="Search" />
         </form>
 
@@ -96,7 +97,7 @@ export const Bazaar = () => {
                                     <p className="content">Weekly Insta Buy: { item[5] }</p>
                                 </p>
                             }
-                            <div className="btn">View More</div>
+                            <a className="btn" href={ "/bazaar/"+item[1] }>View More</a>
                         </div>
                     </div>);
                 })}

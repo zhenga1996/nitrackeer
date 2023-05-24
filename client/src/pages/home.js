@@ -19,7 +19,7 @@ export const Home = () => {
             moons.style.top = value * 1.05 + 'px';
             mountain_behinds.style.top = value * 0.5 + 'px';
             mountain_fronts.style.top = value * 0 + 'px';
-            text.style.marginRight = value * 4 + 'px';
+            text.style.marginRight = value * 3 + 'px';
             text.style.marginTop = value * 1.5 + 'px';
             btn.style.marginTop = value * 1.5 + 'px';
         })
