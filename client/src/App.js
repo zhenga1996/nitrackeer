@@ -3,6 +3,7 @@ import './styles.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import { Home } from "./pages/home";
+import { Player } from "./pages/player";
 import { Auction } from "./pages/auction";
 import { Bazaar } from "./pages/bazaar";
 import { Product } from './pages/product';
@@ -17,6 +18,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path = "/" element = {<Home />} />
+        <Route path = "/player" element = {<Player />} />
         <Route path = "/auction" element = {<Auction />} />
         <Route path = "/bazaar" element = {<Bazaar />} />
         <Route path = "/bazaar/:productId" element = {<Product />} />

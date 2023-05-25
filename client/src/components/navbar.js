@@ -7,6 +7,9 @@ export const Navbar = () => {
         <a href="/" className="site-title">Nitrackeer</a>
         <ul>
             <li>
+                <a href="/player">Player</a>
+            </li>
+            <li>
                 <a href="/auction">Auction</a>
             </li>
             <li>

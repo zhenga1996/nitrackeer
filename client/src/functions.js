@@ -7,6 +7,10 @@ export function toProperCase(str) {
     );
 }
 
+export function toIdCase(str) {
+    return str.replace(/[^\w\s!?]/g,'').replace(' ', '_').toUpperCase();
+}
+
 export function nFormatter(num, digits) {
     const lookup = [
         { value: 1, symbol: "" },
@@ -20,3 +24,9 @@ export function nFormatter(num, digits) {
     });
     return item ? (num / item.value).toFixed(digits) + item.symbol : "0";
 }
+
+export const imageOnError = (event) => {
+    event.currentTarget.src = "https://static.wikia.nocookie.net/minecraft/images/f/ff/BarrierOld.png";
+    event.currentTarget.className = "error";
+    event.currentTarget.onError = null;
+};

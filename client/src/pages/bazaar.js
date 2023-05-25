@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { toProperCase, nFormatter } from "../functions";
+import { toProperCase, nFormatter, imageOnError } from "../functions";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faList, faGrip, faSearch } from '@fortawesome/free-solid-svg-icons'
 import { Loading } from "./loading";
-import { Product } from "./product";
 
 export const Bazaar = () => {
     const [items, setItems] = useState([]);
@@ -47,12 +46,6 @@ export const Bazaar = () => {
         event.preventDefault();
         setFiltered(items.filter(item => item[0].toLowerCase().includes(search.toLowerCase())));
     };
-    
-    const imageOnError = (event) => {
-        event.currentTarget.src = "https://static.wikia.nocookie.net/minecraft/images/f/ff/BarrierOld.png";
-        event.currentTarget.className = "error";
-        event.currentTarget.onError = null;
-    };
 
     if (!items.length) return <Loading />;
 
@@ -69,7 +62,7 @@ export const Bazaar = () => {
 
         <form onSubmit={ searchSubmit }>
             <label><FontAwesomeIcon icon={ faSearch }/>&ensp;</label>
-            <input type="text" value={ search } onChange={ searchChange }/>
+            <input type="text" value={ search } onChange={ searchChange } placeholder="Enter product name here"/>
             <input className="search" type="submit" value="Search" />
         </form>
 
@@ -85,16 +78,16 @@ export const Bazaar = () => {
                             {
                                 view === "list-view" ?
                                 <p className="content">
-                                    <strong> Insta Sell: </strong> { item[2] } coins&emsp;&ensp;
+                                    <strong> Insta Sell: </strong>{ item[2] } coins&emsp;&ensp;
                                     <strong> Weekly Sell: </strong>{ item[3] }&emsp;&ensp;
                                     <strong> Insta Buy: </strong>{ item[4] } coins&emsp;&ensp;
                                     <strong> Weekly Buy: </strong>{ item[5] }
                                 </p> :
                                 <p className="content">
-                                    <p className="content">Insta Sell Price: { item[2] } coins</p>
-                                    <p className="content">Weekly Insta Sell: { item[3] }</p>
-                                    <p className="content">Insta Buy Price: { item[4] } coins</p>
-                                    <p className="content">Weekly Insta Buy: { item[5] }</p>
+                                    <p className="content"><strong> Insta Sell: </strong>{ item[2] } coins</p>
+                                    <p className="content"><strong> Weekly Sell: </strong>{ item[3] }</p>
+                                    <p className="content"><strong> Insta Buy: </strong>{ item[4] } coins</p>
+                                    <p className="content"><strong> Weekly Buy: </strong>{ item[5] }</p>
                                 </p>
                             }
                             <a className="btn" href={ "/bazaar/"+item[1] }>View More</a>

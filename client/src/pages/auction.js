@@ -51,7 +51,7 @@ export const Auction = () => {
 
         <form onSubmit={ searchSubmit }>
             <label><FontAwesomeIcon icon={ faSearch }/>&ensp;</label>
-            <input type="text" value={search} onChange={ searchChange }/>
+            <input type="text" value={search} onChange={ searchChange } placeholder="Enter item name here"/>
             <input className="search" type="submit" value="Search" />
         </form>
 

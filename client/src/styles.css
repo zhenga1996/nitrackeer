@@ -335,6 +335,15 @@ button[type="submit"]:hover {
 
 .view_item .title {
     font-weight: 600;
+    text-decoration: none;
+}
+.view_item .name {
+    font-weight: 600;
+    font-size: 2rem;
+    text-decoration: none;
+}
+.view_item strong {
+    font-weight: 600;
 }
 .view_item .content {
     margin: 5px 0;
