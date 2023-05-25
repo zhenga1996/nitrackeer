@@ -15,7 +15,7 @@ export const Bazaar = () => {
     useEffect(() => {
         axios.get('https://api.slothpixel.me/api/skyblock/bazaar')
         .then(res => {
-            // Fomatting as array since I keep getting an error when using a dictionary object
+            // Fomatting as array since I was not able to map a dictionary into react
             // Array indexes: [name, product_id, sellPrice, sellMovingWeek, buyPrice, buyMovingWeek]
             let list = [];
             for (const [key, value] of Object.entries(res.data)) {
@@ -36,7 +36,7 @@ export const Bazaar = () => {
             setFiltered(list);
         })
         .catch(err => console.log(err));
-    }, [])
+    }, []);
 
     // Control search bar
     const searchChange = (event) => {

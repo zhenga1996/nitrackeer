@@ -95,7 +95,7 @@ export const Player = () => {
                                     <p className="content"><strong> Sold: </strong>{ item[4] }</p>
                                 </p>
                             }
-                            <div className="btn">View More</div>
+                            <a className="btn" href={ "/auction/"+item[1] }>View More</a>
                         </div>
                     </div>);
                 })}
