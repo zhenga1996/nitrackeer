@@ -4,6 +4,7 @@ import { toProperCase, nFormatter, imageOnError } from "../functions";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faList, faGrip, faSearch } from '@fortawesome/free-solid-svg-icons'
 import { Loading } from "./loading";
+import { TopButton } from "../components/topButton";
 
 export const Bazaar = () => {
     const [items, setItems] = useState([]);
@@ -96,5 +97,6 @@ export const Bazaar = () => {
                 })}
             </div>
         </div>
+        <TopButton />
     </div>);
 };

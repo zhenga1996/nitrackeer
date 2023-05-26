@@ -95,6 +95,15 @@ form .txt_field {
     width: 100%;
 }
 
+.top {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    height: 50px;
+    width: 50px;
+    font-size: 50px;
+}
+
 /* Loading Page */
 .loader {
     position: fixed;

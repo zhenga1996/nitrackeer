@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { toIdCase, imageOnError } from "../functions";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faList, faGrip, faSearch } from '@fortawesome/free-solid-svg-icons'
+import { TopButton } from "../components/topButton";
 
 export const Player = () => {
     const [view, setView] = useState("list-view");
@@ -22,7 +23,7 @@ export const Player = () => {
         .then(res => {
             setPlayer(res.data.username);
             setUuid(res.data.uuid.replace(/-/g, ""));
-            axios.get('https://api.hypixel.net/skyblock/auction?key=52009ecf-1d75-430d-9958-cc7330eeccd9&player=' + res.data.uuid.replace(/-/g, ""))
+            axios.get(`https://api.hypixel.net/skyblock/auction?key=${process.env.REACT_APP_API_KEY}&player=` + res.data.uuid.replace(/-/g, ""))
             .then(res => {
                 let list = [];
                 res.data.auctions.forEach(auction => {
@@ -100,5 +101,6 @@ export const Player = () => {
                 })}
             </div>
         </div>
+        <TopButton />
     </div>);
 };

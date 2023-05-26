@@ -3,6 +3,7 @@ import moon from "../images/moon.png";
 import mountain_behind from "../images/mountains_behind.png";
 import mountain_front from "../images/mountains_front.png";
 import { useEffect } from "react";
+import { TopButton } from "../components/topButton";
 
 export const Home = () => {
     useEffect(() => {
@@ -36,17 +37,21 @@ export const Home = () => {
         </section>
         <div class="sec" id="sec">
             <h2>Welcome to Nitrackeer</h2>
-            <p>Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!</p>
-            <p>Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!</p>
-            <p>Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!</p>
-            <p>Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!</p>
-            <p>Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!</p>
-            <p>Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!</p>
-            <p>Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!</p>
-            <p>Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!</p>
-            <p>Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!</p>
-            <p>Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!</p>
-            <p>Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!</p>
+            <p/>
+            <p>This website allows you to track the prices and states of various items on the Hypixel Bazaar and Auction House.</p>
+            <p>-</p>
+            <p>Prices are updated frequently and loaded through utilizing these following APIs:</p>
+            <p><a href="https://api.hypixel.net">https://api.hypixel.net</a></p>
+            <p><a href="https://docs.slothpixel.me">https://docs.slothpixel.me</a></p>
+            <p><a href="https://sky.coflnet.com/api/index.html">https://sky.coflnet.com/api/index.html</a></p>
+            <p>-</p>
+            <p>Other resources are accessed through these following APIs:</p>
+            <p><a href="https://mc-heads.net">https://mc-heads.net</a></p>
+            <p><a href="https://mojang-api-docs.gapple.pw">https://mojang-api-docs.gapple.pw</a></p>
+            <p><a href="https://sky.shiiyu.moe">https://sky.shiiyu.moe</a></p>
+            <p>-</p>
+            <p>Thank you for using and enjoy!</p>
         </div>
+        <TopButton />
     </body>)
 };

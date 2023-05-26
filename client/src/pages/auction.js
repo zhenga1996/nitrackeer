@@ -3,6 +3,7 @@ import axios from "axios";
 import { toIdCase, imageOnError } from "../functions";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faList, faGrip, faSearch } from '@fortawesome/free-solid-svg-icons'
+import { TopButton } from "../components/topButton";
 
 export const Auction = () => {
     const [view, setView] = useState("list-view");
@@ -87,5 +88,6 @@ export const Auction = () => {
                 })}
             </div>
         </div>
+        <TopButton />
     </div>);
 };
