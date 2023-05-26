@@ -20,6 +20,7 @@ export const Player = () => {
         setPlayer(search);
         axios.get("https://api.ashcon.app/mojang/v2/user/" + search)
         .then(res => {
+            setPlayer(res.data.username);
             setUuid(res.data.uuid.replace(/-/g, ""));
             axios.get('https://api.hypixel.net/skyblock/auction?key=52009ecf-1d75-430d-9958-cc7330eeccd9&player=' + res.data.uuid.replace(/-/g, ""))
             .then(res => {
@@ -64,9 +65,7 @@ export const Player = () => {
                     </div>
                     <div className="vi_right">  
                     <a className="name" href={ "https://sky.shiiyu.moe/stats/" + player }>{ player }</a>
-                        <p className="content">
-                            <strong> UUID: </strong>{ uuid }
-                        </p>
+                        <p className="content"> <strong> UUID: </strong> { uuid }</p>
                     </div>
                 </div>
             </div>

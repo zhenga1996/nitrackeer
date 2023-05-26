@@ -351,6 +351,11 @@ button[type="submit"]:hover {
     line-height: 22px;
     font-weight: 200;
 }
+.view_item .id {
+    margin: 5px 0;
+    font-size: 11px;
+    line-height: 22px;
+}
 .view_item .btn {
     width: 125px;
     background: #333;
